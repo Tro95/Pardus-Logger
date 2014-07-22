@@ -476,7 +476,9 @@ function addCombatShareBtn() {
 	for (var x = 0; x < servers.length; x++) {
 		console.log("Trying server " + x + " which is " + servers[x].name);
 		if (servers[x].autoCombat) {
-			saveCombatByServer(true, servers[x]);
+			log = new CombatLog();
+			log.create();
+			log.save(servers[x], true);
 		}
 	}
 
